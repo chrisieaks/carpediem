@@ -84,3 +84,108 @@ h1 {
 body {
   color: #fff;
 }
+
+/* Clock */
+#clock {
+  font: bold 16pt sans;
+  padding:10px;
+
+}
+
+/* Logo */
+
+p {
+  color: #fff;
+  font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+p span {
+  display: inline-block;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500;
+          perspective: 500;
+  -webkit-font-smoothing: antialiased;
+}
+p span::before,
+p span::after {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  content: attr(data-text);
+}
+p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  -webkit-transform: scale(1.1, 1) skew(0deg, 20deg);
+          transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+p span::after {
+  z-index: 2;
+  color: #684da3;
+  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0,0,0,0.8);
+  -webkit-transform: rotateY(-40deg);
+          transform: rotateY(-40deg);
+}
+p span:hover::before {
+  -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
+          transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+p span:hover::after {
+  -webkit-transform: rotateY(-10deg);
+          transform: rotateY(-10deg);
+}
+p span + span {
+  margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+  p {
+    font-size: 2em;
+  }
+  p span::before,
+  p span::after {
+    display: block;
+  }
+}
+@media (min-width: 30em) {
+  p {
+    font-size: 3em;
+  }
+}
+@media (min-width: 40em) {
+  p {
+    font-size: 5em;
+  }
+}
+@media (min-width: 60em) {
+  p {
+    font-size: 8em;
+  }
+}
+
+}
+
+
+.hover-block {
+  float: left;
+  height: 84px;
+  display: block;
+  margin-right: 2%;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+.hover-block.h { width: 14%; }
+.hover-block.i {width:20%;}
