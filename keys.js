@@ -1,4 +1,4 @@
-console.log('LIRI is working on it. Calm down');
+console.log('Keys module Loaded');
 
 exports.weather = {
   api_key: process.env.Weather_ID
