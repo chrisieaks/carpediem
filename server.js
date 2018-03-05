@@ -8,7 +8,7 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(app.get('port'), () => {
+app.listen(PORT, () => {
     console.log(`App is running at http://localhost:${PORT}`);
     console.log('  Press CTRL-C to stop\n');
   });
