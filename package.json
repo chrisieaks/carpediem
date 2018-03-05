@@ -1,0 +1,24 @@
+{
+  "name": "carpediem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisieaks/carpediem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisieaks/carpediem/issues"
+  },
+  "homepage": "https://github.com/chrisieaks/carpediem#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
