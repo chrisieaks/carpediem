@@ -1,6 +1,11 @@
 $(document).ready(function(){
-
+    //Open tap-target on page load
     $('.tap-target').tapTarget('open');
+    //Close tap-target on button hover
+    $('.btn-floating').on('mouseover', function(){
+        $('.tap-target').tapTarget('close');
+    });
+
 
     $('#weather').on('click', function(){
         var zipcode = prompt('Whats your zip?');
