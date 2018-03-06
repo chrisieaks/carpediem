@@ -1,13 +1,14 @@
 $(document).ready(function(){
 
     //Open tap-target on page load
-    // $('.tap-target').tapTarget('open');
+    $('.tap-target').tapTarget('open');
 
     //Close tap-target on widget add button hover
     $('.btn-floating').on('mouseover', function(){
         $('.tap-target').tapTarget('close');
     });
 
+    //When weather button is clicked open card and prompt for zip code
     $('#weather').on('click', function(){
         let div = $('<div>');
         div.addClass('col s12 m5');
