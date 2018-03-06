@@ -1,7 +1,9 @@
 $(document).ready(function(){
+
     //Open tap-target on page load
     $('.tap-target').tapTarget('open');
-    //Close tap-target on button hover
+
+    //Close tap-target on widget add button hover
     $('.btn-floating').on('mouseover', function(){
         $('.tap-target').tapTarget('close');
     });
@@ -11,7 +13,7 @@ $(document).ready(function(){
         var zipcode = prompt('Whats your zip?');
         $.post('/', zipcode)
         .then(function(data){
-            console.log(`User specified Zipcode${data}`);
+            console.log(`User specified Zipcode: ${data}`);
         });
     });
     
