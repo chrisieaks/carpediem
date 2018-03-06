@@ -1,21 +1,22 @@
 $(document).ready(function(){
 
     //Open tap-target on page load
-    $('.tap-target').tapTarget('open');
+    // $('.tap-target').tapTarget('open');
 
     //Close tap-target on widget add button hover
     $('.btn-floating').on('mouseover', function(){
         $('.tap-target').tapTarget('close');
     });
 
-
     $('#weather').on('click', function(){
-        var zipcode = prompt('Whats your zip?');
-        $.post('/', zipcode)
-        .then(function(data){
-            console.log(`User specified Zipcode: ${data}`);
-        });
+        let div = $('<div>');
+        div.addClass('col s12 m5');
+        $('#content').append(div);
+        div.append('<div class="card-panel grey">');
+        $('.card-panel').append('<span class="white-text">');
     });
+
+    
     
 
 });
@@ -29,5 +30,13 @@ $(document).ready(function(){
 //         method: "GET"
 //     }).then(function(data){
 //         console.log(data);
+//     });
+// });
+
+// $('#weather').on('click', function(){
+//     var zipcode = prompt('Whats your zip?');
+//     $.post('/', zipcode)
+//     .then(function(data){
+//         console.log(`User specified Zipcode: ${data}`);
 //     });
 // });
