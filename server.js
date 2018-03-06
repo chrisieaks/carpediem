@@ -23,10 +23,10 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function(req, res){
-    let zipcode = req.body;
+    let zipcode = req;
     let queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode +'.json';
     
-    console.log(JSON.stringify(zipcode, null, 2));
+    console.log(zipcode);
     console.log(queryURL);
     request({
         url: queryURL,
