@@ -15,8 +15,8 @@ $(document).ready(function(){
     displayTime();
     dislplayAlert();
 
-    $("#your_name").attr('submit')
-    console.log('your_name');
+    // $("#your_name").attr('submit')
+    // console.log('your_name');
     
 
     
@@ -35,11 +35,4 @@ $(document).ready(function(){
     );
 })
 
-
-// New York Times API
-
-require("dotenv").config();
-
-var fs = require("fs");
-var keys = require("./keys");
 

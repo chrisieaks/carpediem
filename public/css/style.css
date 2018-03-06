@@ -1,7 +1,7 @@
-
 /* ----- Stars ----- */
 
-#space, .stars {
+#space,
+.stars {
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -11,13 +11,7 @@
 }
 
 .stars {
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
   background-repeat: repeat;
   background-size: 200px 200px;
   animation: zoom 10s infinite;
@@ -28,18 +22,22 @@
   background-position: 50% 50%;
   animation-delay: 0s;
 }
+
 .stars:nth-child(2) {
   background-position: 20% 60%;
   animation-delay: 1s;
 }
+
 .stars:nth-child(3) {
   background-position: -20% -30%;
   animation-delay: 3s;
 }
+
 .stars:nth-child(4) {
   background-position: 40% -80%;
   animation-delay: 5s;
 }
+
 .stars:nth-child(5) {
   background-position: -20% 30%;
   animation-delay: 7s;
@@ -50,7 +48,7 @@
     opacity: 0;
     transform: scale(0.5);
     animation-timing-function: ease-in;
-  } 
+  }
   85% {
     opacity: 1;
     transform: scale(2.8);
@@ -62,11 +60,14 @@
   }
 }
 
-
 body {
-  background: #000;
+  background-image: url("/Users/rogermcintosh/carpediem/public/Images/mountain.png");
   font-family: 'Orbitron', sans-serif;
   color: #fff;
+  z-index: -1;
+  height: 100;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -83,10 +84,10 @@ h1 {
 }
 
 /* Clock */
-#clock {
-  font: bold 16pt sans;
-  padding:10px;
 
+#clock {
+  font: bold 14pt sans;
+  padding: 10px;
 }
 
 /* Logo */
@@ -97,15 +98,17 @@ p {
   font-size: 1em;
   font-weight: 700;
 }
+
 p span {
   display: inline-block;
   position: relative;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-perspective: 500;
-          perspective: 500;
+  perspective: 500;
   -webkit-font-smoothing: antialiased;
 }
+
 p span::before,
 p span::after {
   display: none;
@@ -113,35 +116,41 @@ p span::after {
   top: 0;
   left: -1px;
   -webkit-transform-origin: left top;
-          transform-origin: left top;
+  transform-origin: left top;
   -webkit-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
   content: attr(data-text);
 }
+
 p span::before {
   z-index: 1;
-  color: rgba(0,0,0,0.2);
+  color: rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1.1, 1) skew(0deg, 20deg);
-          transform: scale(1.1, 1) skew(0deg, 20deg);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
 }
+
 p span::after {
   z-index: 2;
   color: #684da3;
-  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0,0,0,0.8);
+  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0, 0, 0, 0.8);
   -webkit-transform: rotateY(-40deg);
-          transform: rotateY(-40deg);
+  transform: rotateY(-40deg);
 }
+
 p span:hover::before {
   -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
-          transform: scale(1.1, 1) skew(0deg, 5deg);
+  transform: scale(1.1, 1) skew(0deg, 5deg);
 }
+
 p span:hover::after {
   -webkit-transform: rotateY(-10deg);
-          transform: rotateY(-10deg);
+  transform: rotateY(-10deg);
 }
-p span + span {
+
+p span+span {
   margin-left: 0.3em;
 }
+
 @media (min-width: 20em) {
   p {
     font-size: 2em;
@@ -151,24 +160,24 @@ p span + span {
     display: block;
   }
 }
+
 @media (min-width: 30em) {
   p {
     font-size: 3em;
   }
 }
+
 @media (min-width: 40em) {
   p {
     font-size: 5em;
   }
 }
+
 @media (min-width: 60em) {
   p {
     font-size: 8em;
   }
 }
-
-}
-
 
 .hover-block {
   float: left;
@@ -184,5 +193,11 @@ p span + span {
   -moz-border-radius: 100%;
   border-radius: 100%;
 }
-.hover-block.h { width: 14%; }
-.hover-block.i {width:20%;}
+
+.hover-block.h {
+  width: 14%;
+}
+
+.hover-block.i {
+  width: 20%;
+}
