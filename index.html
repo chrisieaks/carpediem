@@ -61,13 +61,20 @@
       <div class="stars"></div>
       <div class="stars"></div>
       <div class="stars"></div>
-    </div>
-
-    <!-- fixed action button -->
+    </div>  
+    
+  <!-- fixed action button -->
     <div class="fixed-action-btn horizontal">
-      <a class="btn-floating btn-large red tooltipped" data-position="top" data-delay="50" data-tooltip="Add A Widget">
+      <a class="btn-floating btn-large red darken-3 tooltipped" id="menu" data-position="top" data-delay="50" data-tooltip="Add A Widget">
         <i class="large material-icons">add</i>
       </a>
+      <!-- Tap Target -->
+      <div class="tap-target red darken-3" data-activates="menu">
+          <div class="tap-target-content">
+            <h5>Add a widget</h5>
+            <p>Hover over the plus button to add new cards to your dashboard</p>
+          </div>
+        </div> <!-- end tap target -->
       <ul>
         <li>
           <a class="btn-floating red tooltipped" data-position="top" data-delay="50" data-tooltip="Weather">
