@@ -4,64 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./public/css/reset.css">
+  <link rel="stylesheet" href="./public/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
-
 </head>
 
 <body>
   <!-- header div -->
-<<<<<<< HEAD
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <div>
-          <!-- Logo -->
-          <span data-text="S">S</span>
-          <span data-text="E">E</span>
-          <span data-text="I">I</span>
-          <span data-text="Z">Z</span>
-          <span data-text="E">E</span>
+        <!-- Logo -->
+        <span data-text="S">S</span>
+        <span data-text="A">A</span>
+        <span data-text="V">V</span>
+        <span data-text="E">E</span>
+        <span data-text="T">T</span>
+        <span data-text="H">H</span>
+        <span data-text="E">E</span>
+        <span data-text="D">D</span>
+        <span data-text="A">A</span>
+        <span data-text="Y">Y</span>
 
-          <span data-text="T">T</span>
-          <span data-text="H">H</span>
-          <span data-text="E">E</span>
-
-          <span data-text="D">D</span>
-          <span data-text="A">A</span>
-          <span data-text="Y">Y</span>
-
-        </div>
-        <!-- Hi! "User's Name"   -->
-        <div>
-          <span class="hover-block h" data-color="#ff6f35" data-letter="h"></span>
-          <span class="hover-block i" data-color="#ff6f35" data-letter="i"></span>
+        <!-- Hi! "User's Name and Time"-->
+        <div class="right" <span class="hover-block h" data-color="#ff6f35" data-letter="h">H</span>
+          <span class="hover-block i" data-color="#ff6f35" data-letter="i">I</span>
           <span id="userName"></span>
-
           <span id="clock"></span>
-
-=======
-  <nav class="transparent">
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="#" class="brand-logo">Header: Time of day + User's Name</a>
->>>>>>> 1549a2de52185e52fb0909c1e7297941e157cc5e
         </div>
       </div>
     </div>
   </nav>
   <!-- End header div -->
 
+
   <div class="container">
-
-
     <!-- Background -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="your_name" type="text" class="validate">
+          <label for="your_name">Your Name</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>       
+    </div>
+
     <h1> Save The Day</h1>
     <div id="space">
       <div class="stars"></div>
@@ -77,7 +69,6 @@
         <i class="large material-icons">add</i>
       </a>
       <ul>
-<<<<<<< HEAD
         <li>
           <a class="btn-floating red tooltipped" data-position="top" data-delay="50" data-tooltip="Weather">
             <i class="material-icons">cloud_circle</i>Weather</a>
@@ -97,12 +88,6 @@
             <i class="material-icons">cloud_circle</i>
           </a>
         </li>
-=======
-        <li><a class="btn-floating red tooltipped" id="weather" data-position="top" data-delay="50" data-tooltip="Weather"><i class="material-icons">cloud_circle</i>Weather</a></li>
-        <li><a class="btn-floating yellow darken-1 tooltipped"data-position="top" data-delay="50" data-tooltip="News"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="Stock Information"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip"><i class="material-icons">cloud_circle</i></a></li>
->>>>>>> 1549a2de52185e52fb0909c1e7297941e157cc5e
       </ul>
     </div>
     <!-- end fixed action button -->
@@ -115,21 +100,8 @@
   <!-- Javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-<<<<<<< HEAD
   <script src="./javascript.js" type="text/javascript"></script>
-=======
-  <script src="./javascript/javascript.js" type="text/javascript"></script>
-
- 
-</body>
-
-</html>
-
-
-
->>>>>>> 1549a2de52185e52fb0909c1e7297941e157cc5e
 
 
 </body>
