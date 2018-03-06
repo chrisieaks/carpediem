@@ -10,9 +10,15 @@ $(document).ready(function(){
     function dislplayAlert(){
         $('.modal').modal();
         $('#modal1').modal('open');
+        
     }
     displayTime();
     dislplayAlert();
+
+    $("#your_name").attr('submit')
+    console.log('your_name');
+    
+
     
     
     // Exploding "Hi"
@@ -28,3 +34,12 @@ $(document).ready(function(){
         }
     );
 })
+
+
+// New York Times API
+
+require("dotenv").config();
+
+var fs = require("fs");
+var keys = require("./keys");
+
