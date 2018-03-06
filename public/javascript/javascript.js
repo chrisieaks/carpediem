@@ -13,7 +13,7 @@ $(document).ready(function(){
         let div = $('<div>');
         div.addClass('col s12 m5');
         $('#content').append(div);
-        div.append('<div class="card-panel grey">');
+        div.append('<div class="weather-card card-panel grey">');
         $('.card-panel').append('<span class="white-text">');
         $('.card-panel').append('<div class="input-field">');
         $('.input-field').append('<form method="POST" role="form">');
@@ -34,6 +34,14 @@ $(document).ready(function(){
 
         $.get('/api/' + zipcode, function(data){
         console.log(data);
+        let weather = $('.weather-card');
+        let response = data.current_observation;
+        weather.empty();
+        weather.append('<span class="info white-text">');
+        $('.info').append('<h5>' + response.display_location.full +'</h5>');
+        $('.info').append('<p>' + response.weather + '</p>');
+        $('.info').append();
+
     });
 
     });
@@ -49,33 +57,4 @@ $(document).ready(function(){
         
 
 });
-
-{/* <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button> */}
-
-
-/* <div class="input-field col s6">
-      <input value="Alvin" id="first_name2" type="text" class="validate">
-      <label class="active" for="first_name2">First Name</label>
-    </div> */
-
-
-// $('#weather').on('click', function(){
-//     var zipcode = prompt('Whats your zip');
-//     var queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode + '.json';
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function(data){
-//         console.log(data);
-//     });
-// });
-
-// $('#weather').on('click', function(){
-//     var zipcode = prompt('Whats your zip?');
-    // $.post('/', zipcode)
-    // .then(function(data){
-    //     console.log(`User specified Zipcode: ${data}`);
-    // });
-// });
+});
