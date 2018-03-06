@@ -33,11 +33,12 @@ app.get('/api/:zip', function(req, res){
         json: true
     }, function(error, response, body){
         console.log(JSON.stringify(body, undefined, 2));
+        res.send(body);
     });
 });
 
 // Start Server
 app.listen(PORT, () => {
-    console.log(`App is running at http://localhost:${PORT}`);
+    console.log(`\nApp is running at http://localhost:${PORT}`);
     console.log('  Press CTRL-C to stop\n');
   });
