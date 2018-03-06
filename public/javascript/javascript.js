@@ -14,12 +14,43 @@ $(document).ready(function(){
         $('#content').append(div);
         div.append('<div class="card-panel grey">');
         $('.card-panel').append('<span class="white-text">');
+        $('.card-panel').append('<div class="input-field">');
+        $('.input-field').append('<form method="POST" role="form">');
+        $('.input-field').append('<label class="active" for="zipcode">Zipcode</label>');
+        $('.input-field').append('<input type="text" class="validate" id="zipcode">')
+        $('.input-field').append('<button class="btn waves-effect waves-light" id="submitWeather" type="submit" name="action">Submit<i class="material-icons right">send</i></button>');
+    });
+
+
+    //When zipcode is submited query weather underground from current conditions in zipcode
+    $(document).on('click','#submitWeather', function(data){
+        event.preventDefault();
+
+        let zipcode = $('#zipcode').val().trim();
+
+        console.log('clicked submit');
+        console.log(zipcode);
+
+        $.get('/api/' + zipcode, function(data){
+        console.log(data);
+    });
+
     });
 
     
     
 
 });
+
+{/* <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button> */}
+
+
+/* <div class="input-field col s6">
+      <input value="Alvin" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">First Name</label>
+    </div> */
 
 
 // $('#weather').on('click', function(){
@@ -35,8 +66,8 @@ $(document).ready(function(){
 
 // $('#weather').on('click', function(){
 //     var zipcode = prompt('Whats your zip?');
-//     $.post('/', zipcode)
-//     .then(function(data){
-//         console.log(`User specified Zipcode: ${data}`);
-//     });
+    // $.post('/', zipcode)
+    // .then(function(data){
+    //     console.log(`User specified Zipcode: ${data}`);
+    // });
 // });

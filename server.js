@@ -22,8 +22,8 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/', function(req, res){
-    let zipcode = req;
+app.get('/api/:zip', function(req, res){
+    let zipcode = req.params.zip;
     let queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode +'.json';
     
     console.log(zipcode);
