@@ -38,8 +38,15 @@ $(document).ready(function(){
 
     });
 
-    
-    
+    $('#breaking-news').on('click', function(){
+        var nytKey = '26f30e7b925b498680e5359d7c5627a5';
+        var queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=' + nytKey
+
+        var div = $('<div>');
+        div.addClass('col s12 m5');
+        
+        $('#content').append(div);
+        
 
 });
 
