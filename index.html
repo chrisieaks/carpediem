@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./public/css/reset.css">
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./css/reset.css" >
+  <!-- <link rel="stylesheet" href="./css/style.css" > -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -19,7 +19,8 @@
         <!-- Logo -->
         <a href="#" class="brand-logo">Seize The Day</a>
         <!-- Hi! "User's Name and Time"-->
-        <div class="right">
+        <div class="right"> <span class="hover-block h" data-color="#ff6f35" data-letter="h">H</span>
+          <span class="hover-block i" data-color="#ff6f35" data-letter="i">I</span>
           <span id="userName"></span>
           <span id="clock"></span>
         </div>
@@ -30,26 +31,20 @@
 
   <div class="container">
     <!-- Background -->
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <div class="input-field col s6">
-            <h3 class="blue-text text-darken-2">Welcome may I have your name.</h3>
-          <input placeholder="Enter Name Here" id="your_name" type="text" class="validate" style="color:black">
-         
-        </div>
-      </div>
-      <button id="submitName" class="btn waves-effect waves-light" type="submit" name="action">Submit
+    
 
-      </button>
+      <!-- Render widgets below -->
+    <div class="row" id="content">
     </div>
 
-    <!-- Background -->
+    <!-- <h1> Save The Day</h1> -->
     <div id="space">
       <div class="stars"></div>
       <div class="stars"></div>
       <div class="stars"></div>
       <div class="stars"></div>
       <div class="stars"></div>
+
 
     
   <!-- fixed action button -->
@@ -59,31 +54,13 @@
       </a>
       <!-- Tap Target -->
       <div class="tap-target red darken-3" data-activates="menu">
-        <div class="tap-target-content">
-          <h5>Add a widget</h5>
-          <p>Hover over the plus button to add new cards to your dashboard</p>
-        </div>
-      </div>
-      <!-- end tap target -->
+          <div class="tap-target-content white-text">
+            <h5>Add a widget</h5>
+            <p>Hover over the plus button to add new cards to your dashboard</p>
+          </div>
+        </div> <!-- end tap target -->
       <ul>
-        <!-- <li>
-          <a class="btn-floating red tooltipped" data-position="top" data-delay="50" data-tooltip="Weather">
-            <i class="material-icons">cloud_circle</i>Weather</a>
-        </li>
         <li>
-          <a class="btn-floating yellow darken-1 tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip">
-            <i class="material-icons">format_quote</i>
-          </a>
-        </li>
-        <li>
-          <a class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip">
-            <i class="material-icons">insert_chart</i>
-          </a>
-        </li>
-        <li>
-          <a class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip">
-            <i class="material-icons">cloud_circle</i> -->
-
           <a class="btn-floating red tooltipped" id="weather" data-position="top" data-delay="50" data-tooltip="Weather">
             <i class="material-icons">cloud_queue</i>Weather
           </a>
@@ -125,8 +102,20 @@
     </div>
     
   </div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="input-field col s6">
+        <input placeholder="Placeholder" id="your_name" type="text" class="validate">
+        <label for="your_name">Your Name</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>       
+  </div>
+  </div>
 
-
+  
 
 
   <!-- Javascript -->
