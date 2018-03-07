@@ -33,32 +33,33 @@ $(document).ready(function(){
         console.log(zipcode);
 
         $.get('/api/' + zipcode, function(data){
-        console.log(data);
-        let weather = $('.weather-card');
-        let response = data.current_observation;
-        weather.empty();
-        weather.append('<span class="info white-text">');
-        $('.info').append('<h5>' + response.display_location.full +'</h5>');
-        $('.info').append('<p>' + response.weather + '</p>');
-        $('.info').append();
+            console.log(data);
+            let weather = $('.weather-card');
+            let response = data.current_observation;
+            let div = $('<div>');
+            weather.empty();
+            weather.append('<span class="info white-text">');
+            $('.info').append('<h5>' + response.display_location.full +'</h5>');
+            $('.info').append(div);
+            div.addClass('weather-overview');
+            $('.weather-overview').append('<img id="weather-type">');
+            $('#weather-type').attr('src', response.icon_url);
+            $('.weather-overview').append(response.weather);
+        });
 
     });
 
-    });
+    // $('#top-stories').on('click', function(){
+    //     // var nytKey = '26f30e7b925b498680e5359d7c5627a5';
+    //     // var queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=' + nytKey
 
-    $('#top-stories').on('click', function(){
-        // var nytKey = '26f30e7b925b498680e5359d7c5627a5';
-        // var queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=' + nytKey
-
-        var div = $('<div>');
-        div.addClass('col s12 m5');
+    //     var div = $('<div>');
+    //     div.addClass('col s12 m5');
         
-        $('#content').append(div);
+    //     $('#content').append(div);
+        
 
-        var card = $("<div class='card horizontal'><div class='card-image'><img src='https://lorempixel.com/100/190/nature/6'></div><div class='card-stacked'><div class='card-content'><p>I am a very simple card. I am good at containing small bits of information.</p></div><div class='card-action'><a href='#'>This is a link</a></div></div></div>");
-        div.append(card);
+    //  });
 
- 
-     });
+
 });
-

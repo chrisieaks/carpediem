@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 //    Header clock
 $(document).ready(function(){
@@ -30,8 +28,7 @@ $(document).ready(function(){
             implodeLetter($(this).parents('section').attr('id'), $(this).data('letter'), $(this).data('color'));
         }
     );
-})
->>>>>>> cec8bdf07d7097850c3e305a04c5b59cdd090fcd
+
 $(document).ready(function(){
 
     //Open tap-target on page load
@@ -52,29 +49,7 @@ $(document).ready(function(){
 
     
     
+
 });
 
 
-// $('#weather').on('click', function(){
-//     var zipcode = prompt('Whats your zip');
-//     var queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode + '.json';
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function(data){
-//         console.log(data);
-//     });
-// });
-
-// $('#weather').on('click', function(){
-//     var zipcode = prompt('Whats your zip?');
-//     $.post('/', zipcode)
-//     .then(function(data){
-//         console.log(`User specified Zipcode: ${data}`);
-//     });
-<<<<<<< HEAD
-// });
-=======
-// });
-
->>>>>>> cec8bdf07d7097850c3e305a04c5b59cdd090fcd
