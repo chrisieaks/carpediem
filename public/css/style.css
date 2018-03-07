@@ -1,4 +1,4 @@
-/* ----- Stars ----- */
+
 
 #space,
 .stars {
@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
 }
-/* ----- Stars ----- */
+
 
 .stars {
   background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
@@ -84,14 +84,12 @@ h1 {
   text-shadow: 0 0 3px #6cf;
 }
 
-/* Clock */
 
 #clock {
   font: bold 14pt sans;
   padding: 10px;
 }
 
-/* Logo */
 
 p {
   color: #fff;
@@ -201,10 +199,93 @@ p span+span {
 
 .hover-block.i {
   width: 20%;
+
 }
 
 /* scroll feature for cards */
 .card-scroll{
   height: 50px;
   overflow: scroll;
-}
+} 
+
+  .clear {
+    clear:both;
+  }
+  .weather-card {
+    width:25em;
+    min-height:12em;
+    background: #fff;
+    margin:2em auto;
+    border-radius: .2em;
+    padding-top:1em;
+    padding-left: 1em;
+    padding-right:1em;
+  }
+  .city {
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 1.8em;
+    color:#5b5b5b;
+  }
+  .menu {
+    float: right;
+    font-family: Roboto;
+    font-size:.5em;
+    color:#5b5b5b;
+    margin-top:-.09em;
+    margin-right:-2em;
+    list-style:square;
+  }
+  .sun {
+    width:4em;
+    height:4em;
+    border-radius: 2.5em;
+    margin-top: 1em;
+  }
+  .temp {
+    float:right;
+    font-family:Roboto;
+    font-weight: 300;
+    font-size: 7em;
+    margin-top:-.75em;
+    color:#5b5b5b;
+  }
+  .variations {
+    font-family:Roboto;
+    font-wight:300;
+    color:#8c8c8c;
+    list-style:none;
+    margin-left:-0.5em;
+  }
+  .mph {
+     font-size:.8em;
+  }
+  .speed:before {
+    content:url('https://i.imgur.com/luN0Jmq.png');
+  }
+  .forecast {
+    width:100%;
+    margin:0 auto;
+  }
+  .day {
+    display:block;
+    width: 21.5%;
+    height:9em;
+    float:left;
+    margin: 0 .375em .5em;
+    text-align:center;
+    font-family:Roboto;
+    color: #5b5b5b;
+    border-right:.1em solid #d9d9d9;
+    line-height: 2;
+  }
+  .fri {
+    border-right:none;
+  }
+  .highTemp {
+    font-weight:bold;
+  }
+  .lowTemp {
+    color: #8c8c8c;
+  }
+
