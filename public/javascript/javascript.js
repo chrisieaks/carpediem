@@ -22,7 +22,6 @@ $(document).ready(function(){
         $('.input-field').append('<button class="btn waves-effect waves-light" id="submitWeather" type="submit" name="action">Submit<i class="material-icons right">send</i></button>');
     });
 
-
     //When zipcode is submited query weather underground from current conditions in zipcode
     $(document).on('click','#submitWeather', function(data){
         event.preventDefault();

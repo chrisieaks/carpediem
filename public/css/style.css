@@ -202,3 +202,9 @@ p span+span {
 .hover-block.i {
   width: 20%;
 }
+
+/* scroll feature for cards */
+.card-scroll{
+  height: 50px;
+  overflow: scroll;
+}
