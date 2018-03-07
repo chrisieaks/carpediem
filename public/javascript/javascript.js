@@ -26,7 +26,6 @@ $(document).ready(function(){
         }
     });
 
-
     //When zipcode is submited query weather underground from current conditions in zipcode
     $(document).on('click','#submitWeather', function(data){
         event.preventDefault();
