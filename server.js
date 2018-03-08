@@ -37,6 +37,21 @@ app.get('/api/:zip', function(req, res){
     });
 });
 
+//nyt top stories
+app.get('/api/:zip', function(req, res){
+    var queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode +'.json';
+    
+    console.log(zipcode);
+    console.log(queryURL);
+    request({
+        url: queryURL,
+        json: true
+    }, function(error, response, body){
+        console.log(JSON.stringify(body, undefined, 2));
+        res.send(body);
+    });
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`\nApp is running at http://localhost:${PORT}`);

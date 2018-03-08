@@ -1,5 +1,5 @@
 
-/*
+
 #space,
 .stars {
   overflow: hidden;
@@ -199,8 +199,15 @@ p span+span {
 
 .hover-block.i {
   width: 20%;
+
+}
+
+/* scroll feature for cards */
+.card-scroll{
+  height: 50px;
+  overflow: scroll;
 } 
-*/
+
   .clear {
     clear:both;
   }
@@ -281,4 +288,4 @@ p span+span {
   .lowTemp {
     color: #8c8c8c;
   }
-  
+
