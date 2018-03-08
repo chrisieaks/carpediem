@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 
 app.get('/api/:zip', function(req, res){
     let zipcode = req.params.zip;
-    let queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/q/' + zipcode +'.json';
+    let queryURL = 'http://api.wunderground.com/api/6ada133f06c8d75d/conditions/forecast10day/q/' + zipcode +'.json';
     
     console.log(zipcode);
     console.log(queryURL);

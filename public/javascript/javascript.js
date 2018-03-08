@@ -8,30 +8,29 @@ $(document).ready(function(){
     });
 
     //When weather button is clicked open card and prompt for zip code
-    $('#weather').one('click', function(event){
+    $('#weather').on('click', function(event){
         event.preventDefault();
-        let i = 0;
-        if(i < 4) {
+        $('.weather-col').remove();
             let div = $('<div>');
-            div.addClass('col s12 m5');
+            div.addClass('col s12 m5 weather-col');
             $('#content').append(div);
-            div.append('<div class="weather-card' + ' card-panel">');
+            div.append('<div class="weather-card card-panel">');
             $('.weather-card').append('<span class="white-text">');
             $('.weather-card').append('<div class="' + 'weather-input' +' input-field">');
             $('.weather-input').append('<form method="POST" role="form">');
             $('.weather-input').append('<label class="active" for="zipcode">Zipcode</label>');
             $('.weather-input').append('<input type="text" class="validate" id="zipcode">')
             $('.weather-input').append('<button class="btn waves-effect waves-light" id="submitWeather" type="submit" name="action">Submit<i class="material-icons right">send</i></button>');
-            i++;
-        }
     });
 
-
+ 
     //When zipcode is submited query weather underground from current conditions in zipcode
     $(document).on('click','#submitWeather', function(data){
         event.preventDefault();
 
         let zipcode = $('#zipcode').val().trim();
+        localStorage.setItem('zipcode', zipcode);
+
 
         console.log('clicked submit');
         console.log(zipcode);
@@ -42,34 +41,77 @@ $(document).ready(function(){
             let response = data.current_observation;
             let div = $('<div>');
             weather.empty();
-            weather.append(`<span class="city">${response.display_location.city}`);
-            weather.append(`<div class="sun"><img src="https://icons.wxug.com/i/c/j/${response.icon}.gif"></div>`);
+            weather.append(`<span class="city">${data.current_observation.display_location.city}`);
+            weather.append('<a class="menu" href="#"><i class="tiny material-icons">close</i></a>')
+            weather.append(`<div class="sun"><img src="https://icons.wxug.com/i/c/j/${data.current_observation.icon}.gif"></div>`);
             weather.append(`<span class="temp">${response.temp_f}&#176;</span>`);
             weather.append('<br>');
-            weather.append(`<span><ul class="variations"><li>${response.weather}</li><li><span class"speed">${response.wind_mph}</span><span class="mph">mph</span></li></ul></span>`);
-            // div.addClass('weather-overview');
-            // $('.weather-overview').append('<p>' + response.weather);
-            // $('.weather-overview').append('<p>' + response.temp_f);
-            // $('.display-weather').append('<a class="close-btn btn waves-effect waves-light red"><i class="material-icons">close</i></a>');
+            weather.append(`<span><ul class="variations"><li>${data.current_observation.weather}</li><li><span class"speed"><img src="https://i.imgur.com/luN0Jmq.png">${response.wind_mph}</span><span class="mph">mph</span></li></ul></span>`);
+            weather.append('<div class="forecast clear">');
+            $('.forecast').append(`<div class="day tue">${data.forecast.simpleforecast.forecastday[1].date.weekday_short}
+            <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[1].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[1].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[1].low.fahrenheit}&#176;</span>
+          </div>
+          <div class="day tue">${data.forecast.simpleforecast.forecastday[2].date.weekday_short}
+              <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[2].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[2].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[2].low.fahrenheit}&#176;</span>
+            </div>
+            <div class="day tue">${data.forecast.simpleforecast.forecastday[3].date.weekday_short}
+              <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[3].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[3].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[3].low.fahrenheit}&#176;</span>
+            </div>
+            <div class="day fri">${data.forecast.simpleforecast.forecastday[4].date.weekday_short}
+              <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[4].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[4].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[4].low.fahrenheit}&#176;</span>
+            </div>`);
+            
         });
 
     });
 
-    $(document).on('click', '.close-btn', function(){
-        $('.weather-col').remove();
+    $(document).on('click', '.menu', function(){
+        $('.weather-card').remove();
     });
 
-    // $('#top-stories').on('click', function(){
-    //     // var nytKey = '26f30e7b925b498680e5359d7c5627a5';
-    //     // var queryURL = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=' + nytKey
 
-    //     var div = $('<div>');
-    //     div.addClass('col s12 m5');
-        
-    //     $('#content').append(div);
-        
 
-    //  });
+    function checkZip() {
+        if(localStorage.getItem('zipcode') === undefined){
+            console.log('new');
+        } else {
+            let div = $('<div>');
+            div.addClass('col s12 m5 weather-col');
+            $('#content').append(div);
+            div.append('<div class="weather-card card-panel">');
+            var zipcode = localStorage.getItem('zipcode');
+            $.get('/api/' + zipcode, function(data){
+                console.log(data);
+                let weather = $('.weather-card');
+                let response = data.current_observation;
+                let div = $('<div>');
+                weather.empty();
+                weather.append(`<span class="city">${data.current_observation.display_location.city}`);
+                weather.append('<a class="menu" href="#"><i class="tiny material-icons">close</i></a>')
+                weather.append(`<div class="sun"><img src="https://icons.wxug.com/i/c/j/${data.current_observation.icon}.gif"></div>`);
+                weather.append(`<span class="temp">${response.temp_f}&#176;</span>`);
+                weather.append('<br>');
+                weather.append(`<span><ul class="variations"><li>${data.current_observation.weather}</li><li><span class"speed"><img src="https://i.imgur.com/luN0Jmq.png">${response.wind_mph}</span><span class="mph">mph</span></li></ul></span>`);
+                weather.append('<div class="forecast clear">');
+                $('.forecast').append(`<div class="day tue">${data.forecast.simpleforecast.forecastday[1].date.weekday_short}
+                <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[1].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[1].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[1].low.fahrenheit}&#176;</span>
+              </div>
+              <div class="day tue">${data.forecast.simpleforecast.forecastday[2].date.weekday_short}
+                  <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[2].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[2].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[2].low.fahrenheit}&#176;</span>
+                </div>
+                <div class="day tue">${data.forecast.simpleforecast.forecastday[3].date.weekday_short}
+                  <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[3].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[3].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[3].low.fahrenheit}&#176;</span>
+                </div>
+                <div class="day fri">${data.forecast.simpleforecast.forecastday[4].date.weekday_short}
+                  <br> <img src="https://icons.wxug.com/i/c/j/${data.forecast.simpleforecast.forecastday[4].icon}.gif"> <br> <span class="highTemp">${data.forecast.simpleforecast.forecastday[4].high.fahrenheit}&#176;</span> <br> <span class="lowTemp">${data.forecast.simpleforecast.forecastday[4].low.fahrenheit}&#176;</span>
+                </div>`);
+                
+            });
+        }
+    };
+     
+    checkZip();  
 
+   
 
 });
