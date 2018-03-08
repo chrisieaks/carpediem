@@ -3,13 +3,12 @@
 #space,
 .stars {
   overflow: hidden;
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-/* ----- Stars ----- */
 
 .stars {
   background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
@@ -62,27 +61,14 @@
 }
 
 body {
-  background-image: url("/Users/rogermcintosh/carpediem/public/Images/mountain.png");
+  background-image: url("./Images/mountain.png");
   font-family: 'Orbitron', sans-serif;
-  color: #fff;
-  z-index: -1;
-  height: 100;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-h1 {
-  position: absolute;
+  color: #ffffff;
   z-index: 1;
-  top: 50%;
-  left: 50%;
-  margin: -1.5em -2.5em;
-  width: 5em;
-  color: #011;
-  font-size: 5em;
-  text-align: center;
-  text-shadow: 0 0 3px #6cf;
-}
+  height: 100;
+   background-repeat: no-repeat;
+  background-size: cover; 
+} 
 
 /* Clock */
 
@@ -91,114 +77,22 @@ h1 {
   padding: 10px;
 }
 
-/* Logo */
+/* Most-Popular */
 
-p {
-  color: #fff;
-  font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
-  font-size: 1em;
-  font-weight: 700;
+#articles {
+  
+  box-sizing: border-box;
+  animation: marquee 20s linear infinite;
+  
 }
 
-p span {
-  display: inline-block;
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-perspective: 500;
-  perspective: 500;
-  -webkit-font-smoothing: antialiased;
+#articles:hover {
+    animation-play-state: paused;
 }
 
-p span::before,
-p span::after {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: -1px;
-  -webkit-transform-origin: left top;
-  transform-origin: left top;
-  -webkit-transition: all ease-out 0.3s;
-  transition: all ease-out 0.3s;
-  content: attr(data-text);
+@keyframes marquee {
+  0%   { top:   8em }
+  100% { top: -11em }
 }
 
-p span::before {
-  z-index: 1;
-  color: rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.1, 1) skew(0deg, 20deg);
-  transform: scale(1.1, 1) skew(0deg, 20deg);
-}
 
-p span::after {
-  z-index: 2;
-  color: #684da3;
-  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0, 0, 0, 0.8);
-  -webkit-transform: rotateY(-40deg);
-  transform: rotateY(-40deg);
-}
-
-p span:hover::before {
-  -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
-  transform: scale(1.1, 1) skew(0deg, 5deg);
-}
-
-p span:hover::after {
-  -webkit-transform: rotateY(-10deg);
-  transform: rotateY(-10deg);
-}
-
-p span+span {
-  margin-left: 0.3em;
-}
-
-@media (min-width: 20em) {
-  p {
-    font-size: 2em;
-  }
-  p span::before,
-  p span::after {
-    display: block;
-  }
-}
-
-@media (min-width: 30em) {
-  p {
-    font-size: 3em;
-  }
-}
-
-@media (min-width: 40em) {
-  p {
-    font-size: 5em;
-  }
-}
-
-@media (min-width: 60em) {
-  p {
-    font-size: 8em;
-  }
-}
-
-.hover-block {
-  float: left;
-  height: 84px;
-  display: block;
-  margin-right: 2%;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
-}
-
-.hover-block.h {
-  width: 14%;
-}
-
-.hover-block.i {
-  width: 20%;
-}

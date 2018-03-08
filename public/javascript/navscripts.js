@@ -8,7 +8,9 @@ $(document).ready(function () {
     }
 
     function dislplayAlert() {
-        $('.modal').modal();
+        $('.modal').modal({
+            dismissible: false
+        });
         $('#modal1').modal('open');
 
     }

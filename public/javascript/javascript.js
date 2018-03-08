@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
     //Open tap-target on page load
+    $(document).on('click', '#submitName','.tap-target', function () {
     $('.tap-target').tapTarget('open');
+    })
 
     //Close tap-target on widget add button hover
     $('.btn-floating').on('mouseover', function(){
