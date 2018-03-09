@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(document).one('click', '#trivia', function (event) {
         event.preventDefault();
         triviaQuestion();
-        var queryURL = "http://jservice.io/api/random?count=1";
+        var queryURL = "https://jservice.io/api/random?count=1";
         $.ajax({
             url: queryURL,
             method: "GET"
