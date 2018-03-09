@@ -8,7 +8,9 @@ $(document).ready(function () {
     }
 
     function dislplayAlert() {
-        $('.modal').modal();
+        $('.modal').modal({
+            dismissible: false
+        });
         $('#modal1').modal('open');
 
     }
@@ -21,11 +23,11 @@ $(document).ready(function () {
             event.preventDefault();
             $('#modal1').modal('close');
            var name = $('#your_name').val();
+           localStorage.setItem('name', name);
            $('#userName').text("Welcome" + " " + name)
         });
 
     }
 
-        
-        
-})
+    
+});

@@ -66,6 +66,7 @@ $(document).ready(function(){
 
     $(document).on('click', '.menu', function(){
         $('.weather-card').remove();
+        localStorage.removeItem('zipcode');
     });
 
 
@@ -110,6 +111,7 @@ $(document).ready(function(){
     };
      
     checkZip();  
+
 
    
 
